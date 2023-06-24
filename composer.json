@@ -1,0 +1,5 @@
+{
+    "require": {
+        "fingerprint/fingerprint-pro-server-api-sdk": "^2.0"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "name": "fingerprint/fingerprint-pro-server-api-sdk",
+    "version": "2.0.0",
+    "description": "Fingerprint Pro Server API provides a way for validating visitors’ data issued by Fingerprint Pro.",
+    "keywords": [
+        "swagger",
+        "php",
+        "sdk",
+        "api",
+        "browser",
+        "detection",
+        "fingerprint",
+        "identification",
+        "fingerprinting",
+        "browser-fingerprinting",
+        "browser-fingerprint",
+        "fraud-detection",
+        "fraud",
+        "audio-fingerprinting",
+        "fingerprintjs",
+        "visitor-identification",
+        "fingerprintjs-pro"
+    ],
+    "homepage": "https://www.fingerprint.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fingerprint",
+            "homepage": "https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "~7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "8.5.33",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~2.19"
+    },
+    "autoload": {
+        "psr-4": { "Fingerprint\\ServerAPI\\" : "./src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Fingerprint\\ServerAPI\\" : "test/" }
+    }
+}
