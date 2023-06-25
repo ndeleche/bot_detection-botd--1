@@ -6,10 +6,13 @@
         <a class="nav-link" href="admin_dashboard.php">Admin Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="chart.php">Charts</a>
+        <a class="nav-link" href="bot.php">Bot detection Request_id</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="bot.php">Enter Request_id</a>
+        <a class="nav-link" href="bot1.php">Ientification Request_id</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="chart.php">Human & Bot chart</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="admin_login.php">Logout</a>

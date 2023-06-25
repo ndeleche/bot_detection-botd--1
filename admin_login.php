@@ -15,6 +15,11 @@
       text-align: center;
       margin-bottom: 20px;
     }
+
+    .error-message {
+      color: red;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -30,6 +35,11 @@
         <input type="password" class="form-control" id="password" name="password" required>
       </div>
       <button type="submit" class="btn btn-primary btn-block">Login</button>
+      <?php
+        if (isset($_GET['error'])) {
+          echo '<p class="error-message">Incorrect username or password</p>';
+        }
+      ?>
     </form>
   </div>
 </body>

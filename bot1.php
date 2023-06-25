@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bot detection Request_id</title>
+  <title>Identification Request_id</title>
   <link rel="icon" type="image/png" href="https://example.com/path/to/your-icon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -125,9 +125,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $responseData['products']['botd']['data']['bot']['result'];
     $type = $responseData['products']['botd']['data']['bot']['type'];
   
-    // Prepare and execute the SQL query to insert data into the database
-    $query = "INSERT INTO admin (request_id, result, type) VALUES (?, ?, ?)";
+       // Prepare and execute the SQL query to insert data into the database
+    $query = "INSERT INTO human (request_id, result, type) VALUES (?, ?, ?)";
     $statement = $pdo->prepare($query);
+
     $statement->execute([$requestId, $result, $type]);
     echo '<p class="success-message">Data inserted into the database successfully!</p>';
   } catch (Exception $e) {

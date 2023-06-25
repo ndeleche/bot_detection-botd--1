@@ -23,7 +23,7 @@
       <?php include 'navbar.php'; ?>
       <div class="col-md-9">
         <div class="content">
-          <h2>Welcome to the Admin Dashboard</h2>
+          <h2 style="color: green; text-align: center;">Welcome to the Admin Dashboard</h2>
           <!-- Add your content here -->
         </div>
       </div>
