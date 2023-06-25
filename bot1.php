@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,16 +133,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Extract the result and type from the response
     $result = $responseData['products']['botd']['data']['bot']['result'];
-    $type = $responseData['products']['botd']['data']['bot']['type'];
+    // $type = $responseData['products']['botd']['data']['bot']['type'];
   
        // Prepare and execute the SQL query to insert data into the database
-    $query = "INSERT INTO human (request_id, result, type) VALUES (?, ?, ?)";
+    $query = "INSERT INTO human (request_id, result) VALUES (?, ?)";
     $statement = $pdo->prepare($query);
 
-    $statement->execute([$requestId, $result, $type]);
+    $statement->execute([$requestId, $result]);
     echo '<p class="success-message">Data inserted into the database successfully!</p>';
   } catch (Exception $e) {
-    echo $e->getMessage(), PHP_EOL;
+    echo '<p class="danger-message">Failed to insert data into the database!</p>';
   }
 }
         ?>

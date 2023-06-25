@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statement->execute([$requestId, $result, $type]);
     echo '<p class="success-message">Data inserted into the database successfully!</p>';
   } catch (Exception $e) {
-    echo $e->getMessage(), PHP_EOL;
+    echo '<p class="danger-message">Failed to insert data into the database!</p>';
   }
 }
         ?>

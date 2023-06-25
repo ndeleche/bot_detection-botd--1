@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +33,7 @@
       <?php include 'navbar.php'; ?>
       <div class="col-md-9">
         <div class="content">
-          <h2 style="color: green; text-align: center;">Welcome to the Admin Dashboard</h2>
+         <h1 style="color: green; text-align: center;">Welcome, <?php echo $_SESSION['username']; ?></h2>
           <!-- Add your content here -->
         </div>
       </div>

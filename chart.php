@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +24,7 @@
     }
 
     .content {
-      padding: 100px;
+      padding: 70px;
     }
     .container {
       height: 100vh;
@@ -189,7 +199,6 @@ $conn->close();
     }
   });
 </script>
-
         </div>
       </div>
     </div>

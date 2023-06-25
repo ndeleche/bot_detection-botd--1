@@ -1,14 +1,10 @@
 <?php
-// Start session
 session_start();
 
-// Clear session data
-session_unset();
-
-// Destroy the session
-session_destroy();
-
-// Redirect to the login page
-header("Location:admin_login.php");
-exit();
+if (session_destroy()) {
+    header("Location: login.php");
+    exit();
+} else {
+    echo "Failed to log out";
+}
 ?>
